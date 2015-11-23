@@ -56,8 +56,8 @@ class QueryAdd (Query):
 
     def __init__(self, xRange=(7, 8), yRange=(1, 50)):
         logger.debug("init QueryAdd function...")
-        x = random.randint(1, 50)
-        y = random.randint(7, 8)
+        x = random.randint(1, 89)
+        y = random.randint(6, 9)
         queryString = [str(x), " + ", str(y), " = "]
         self.query = "".join(queryString)
         self.correctAnswer = x + y
@@ -66,8 +66,8 @@ class QueryAdd (Query):
 class QueryAdd2 (Query):
     def __init__(self):
         logger.debug("init QueryAdd2 function...")
-        x = random.randint(7, 8)
-        y = random.randint(1, 50)
+        x = random.randint(6, 9)
+        y = random.randint(1, 89)
         if x <= y:
             queryString = [str(x), " + ? = ", str(y), "      ? = "]
             self.correctAnswer = y - x
@@ -79,8 +79,8 @@ class QueryAdd2 (Query):
 
 class QueryMinus (Query):
     def __init__(self):
-        x = random.randint(20, 50)
-        y = random.randint(7, 8)
+        x = random.randint(20, 55)
+        y = random.randint(6, 9)
         queryString = [str(x), " - ", str(y), " = "]
         self.query = "".join(queryString)
         self.correctAnswer = x - y
