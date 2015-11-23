@@ -34,10 +34,21 @@ class Query:
             self.answerMessage = "Mauvaise reponse - le resultat est " + \
                                  str(self.correctAnswer)
 
-    def getQueryInstance(self, queryType=None):
-        if queryType == None:
-            m = QueryAdd2()
+    @staticmethod
+    def getQueryInstance(queryType=None):
+        if queryType is None:
+            choix = random.randint(1, 4)
+            if choix == 1:
+                m = QueryAdd()
+            elif choix == 2:
+                m = QueryAdd2()
+            elif choix == 3:
+                m = QueryMinus()
+            else:
+                m = QueryMinus2()
             return m
+        else:
+            return None
 
 
 class QueryAdd (Query):
@@ -46,7 +57,7 @@ class QueryAdd (Query):
     def __init__(self, xRange=(7, 8), yRange=(1, 50)):
         logger.debug("init QueryAdd function...")
         x = random.randint(1, 50)
-        y = random.randint(7, 8 )
+        y = random.randint(7, 8)
         queryString = [str(x), " + ", str(y), " = "]
         self.query = "".join(queryString)
         self.correctAnswer = x + y
