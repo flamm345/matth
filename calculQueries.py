@@ -3,7 +3,7 @@
 import random
 import logging
 
-logger = logging.getLogger("calcul2")
+logger = logging.getLogger(__name__)
 
 
 class Query:
@@ -16,7 +16,7 @@ class Query:
     answerMessage = "pas de reponse ..:"
 
     def __init__(self):
-        pass
+        logger.debug("self : %s" , self)
 
     def isCorrect(self):
         if self.currentAnswer == self.correctAnswer:

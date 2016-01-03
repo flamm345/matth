@@ -7,7 +7,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 # -- initialisation du logging
-logger = logging.getLogger("calcul")
+logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 formater = logging.Formatter('%(asctime)s :: %(levelname)s :: %(message)s')
 streamHandler = RotatingFileHandler('activity.log', 'a', 1000000, 1)
